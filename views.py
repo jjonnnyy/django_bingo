@@ -1,14 +1,20 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 
-from random import sample
+from random import sample, shuffle
 
 from bingo.models import BingoItem
 from bingo.settings import card_title, card_width, card_height
 
 def build_items_list():
-    items = BingoItem.objects.all()
-    return sample(list(items), (card_width * card_height))
+    items_required = card_width * card_height
+    items = list(BingoItem.objects.all())
+    if len(items) >= items_required:
+        return sample(items, items_required)
+    else:
+        shuffle(items)
+        return items
+
 
 def index(request):
     context = {
