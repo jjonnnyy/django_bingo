@@ -3,8 +3,8 @@ from django.shortcuts import render
 
 from random import sample, shuffle
 
-from bingo.models import BingoItem
-from bingo.settings import card_title, card_width, card_height
+from django_bingo.models import BingoItem
+from django_bingo.settings import card_title, card_width, card_height
 
 def build_items_list():
     items_required = card_width * card_height

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from bingo.models import BingoItem
+from django_bingo.models import BingoItem
 
 class BingoAdmin(admin.ModelAdmin):
     fields = ('text',)
