@@ -1,0 +1,8 @@
+Bingo Card Django Application
+
+Card title, width and height can be changed in settings.py. Card items are
+added through the django admin pages.
+
+Any questions please email me@jonathanely.com.
+
+Jonathan
