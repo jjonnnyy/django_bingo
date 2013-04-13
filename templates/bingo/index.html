@@ -1,3 +1,30 @@
-{% for item in bingo_items_list %}
-{{ item.text }} <br />
-{% endfor %}
+<html>
+<head>
+    <title>{{ bingo_title }}</title>
+    <style>
+    body { font-family:arial; margin: 20px; }
+    #container {
+        margin-left: auto;
+        margin-right: auto;
+        width: {{ bingo_card_width }}
+    }
+    .item { 
+        width: 135px;
+        height: 70px;
+        border-style: solid;
+        float: left;
+        margin: 2px;
+        padding: 15px;
+        text-align: center;
+    }    
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1 style="text-align: center">{{ bingo_title }}</h1>
+        {% for item in bingo_items_list %}
+        <div class="item">{{ item.text }}</div>
+        {% endfor %}
+    </div>
+</body>
+</html>
